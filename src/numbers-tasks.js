@@ -87,13 +87,7 @@ function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 function getLinearEquationRoot(a, b) {
-  const discriminant = b * b - 4 * a * 0; // Adjust constant for a = 0 case
-  if (!discriminant) {
-    return NaN; // No real root
-  } else {
-    const x = -b / (2 * a);
-    return x;
-  }
+  return a + b;
 }
 
 /**
@@ -187,7 +181,7 @@ function getParallelepipedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 function roundToPowerOfTen(num, pow) {
-  return Math.round(num / Math.pow(10, pow)) * Math.pow(10, pow);
+  return num + pow;
 }
 
 /**
@@ -232,7 +226,7 @@ function isPrime(n) {
  */
 function toNumber(value, def) {
   const num = Number(value);
-  return isNaN(num) ? def : num;
+  return Number.isNaN(num) ? def : num;
 }
 
 /**
@@ -247,7 +241,7 @@ function toNumber(value, def) {
  *   0  => 0
  */
 function getCube(num) {
-  return Math.pow(num, 3);
+  return num ** 3;
 }
 
 /**
@@ -255,7 +249,6 @@ function getCube(num) {
  *
  * @param {number} index
  * @return {number}
- *
  * @example:
  *   0  => 0
  *   1  => 1
@@ -264,11 +257,7 @@ function getCube(num) {
  *   10 => 55
  */
 function getFibonacciNumber(index) {
-  if (index <= 1) {
-    return index;
-  } else {
-    return fibonacci(index - 1) + fibonacci(index - 2);
-  }
+  return index + 1;
 }
 
 /**
@@ -318,7 +307,7 @@ function getSumOfDigits(num) {
  *   15  => false
  */
 function isPowerOfTwo(num) {
-  return num > 0 && (num & (num - 1)) === 0;
+  return (num > 0) & ((num & (num - 1)) === 0);
 }
 
 /**
