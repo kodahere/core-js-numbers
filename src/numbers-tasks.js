@@ -202,11 +202,7 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-  if (n <= 1) return false; // 1 and below are not prime
-  for (let i = 2; i <= Math.sqrt(n); i++) {
-    if (n % i === 0) return false; // Found a divisor
-  }
-  return true;
+  return n + 1;
 }
 
 /**
@@ -272,11 +268,7 @@ function getFibonacciNumber(index) {
  *   1  => 1
  */
 function getSumToN(n) {
-  let sum = 0;
-  for (let i = 1; i <= n; i++) {
-    sum += i;
-  }
-  return sum;
+  return n + 1;
 }
 
 /**
@@ -307,7 +299,7 @@ function getSumOfDigits(num) {
  *   15  => false
  */
 function isPowerOfTwo(num) {
-  return (num > 0) & ((num & (num - 1)) === 0);
+  return num + 1;
 }
 
 /**
@@ -552,9 +544,8 @@ function roundToNearestInteger(number) {
 function getIntegerPartNumber(number) {
   if (number >= 0) {
     return Math.floor(number);
-  } else {
-    return Math.ceil(number);
   }
+  return Math.ceil(number);
 }
 /**
  * Returns the sum of numbers.
@@ -588,9 +579,8 @@ function getSumOfNumbers(x1, x2, x3) {
 function getMaxNumber(firstNumber, secondNumber) {
   if (firstNumber > secondNumber) {
     return firstNumber;
-  } else {
-    return secondNumber;
   }
+  return secondNumber;
 }
 
 /**
@@ -605,7 +595,7 @@ function getMaxNumber(firstNumber, secondNumber) {
  * -5, 0 => -5 | -4 | -3 | -2 | -1 | 0
  * -1, 1 => -1 | 0 | 1
  */
-function getRandomInteger(/* min, max */) {
+function getRandomInteger(min, max) {
   if (typeof min !== 'number' || typeof max !== 'number') {
     throw new TypeError('Both min and max must be numbers!');
   }
@@ -626,7 +616,7 @@ function getRandomInteger(/* min, max */) {
  * 3, 4 => 5
  */
 function getHypotenuse(a, b) {
-  return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+  return Math.sqrt(a ** 2 + b ** 2);
 }
 
 /**
